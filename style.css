@@ -1,0 +1,807 @@
+/* ================= GLOBAL STYLES ================= */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #ffffff; /* clean white background */
+    color: #000; /* default text color black */
+}
+
+a {
+    text-decoration: none !important;
+    color: inherit;
+}
+
+.section_title h1 {
+    font-weight: 700;
+    color: #000; /* headings black */
+}
+
+/* ================= NAVBAR ================= */
+.navbar-brand img {
+    max-height: 60px;
+}
+
+.navbar .nav-link {
+    font-weight: 500;
+    margin: 0 10px;
+    color: #000;
+}
+
+/* ================= CAROUSEL ================= */
+.carousel-item img {
+  height: 350px;
+  max-width: 75%;      /* 🔽 reduce width */
+  margin: 0 auto;      /* center image */
+  display: block;
+  object-fit: cover;
+}
+
+/* ================= SHOP BY CATEGORY ================= */
+.shop_by_category {
+    background-color: #f8f9fa;
+}
+
+.shop_by_category .section_title h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+/* Category Card */
+.category-card {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.category-card img {
+    width: 100%;
+    height: 250px;           /* fixed height for uniform size */
+    object-fit: cover;       /* ensures the image covers the container */
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.category-card:hover img {
+    transform: scale(1.1);    /* zoom effect on hover */
+}
+
+/* Overlay */
+.category-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.35);  /* semi-transparent dark overlay */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.category-card:hover .category-overlay {
+    opacity: 1;
+}
+
+.category-overlay h4 {
+    color: #fff;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    text-align: center;
+}
+
+
+/* ================= PRODUCTS ================= */
+.single_product {
+    background: #fff;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.single_product img {
+    height: 250px;
+    object-fit: cover;
+}
+
+.single_product h4 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #000; /* headings black */
+}
+
+.single_product p {
+    color: #007bff;
+    font-weight: bold;
+}
+
+.single_product:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+/* ================= FEATURES ================= */
+.feature {
+    background: linear-gradient(120deg, #43CBFF 0%, #9708CC 100%);
+    color: #fff;
+    padding: 60px 0;
+}
+
+.feature i {
+    color: #ffc107;
+}
+
+.feature h3 {
+    margin-bottom: 15px;
+    color: #000; /* headings black */
+}
+
+/* ================= FOOTER ================= */
+.footer {
+  background: #f8f9fa;
+  padding: 40px 0;
+  position: relative;
+}
+
+.footer-logo-img {
+  width: 140px;
+}
+
+.footer h5 {
+  font-weight: 500;
+  margin-bottom: 15px;
+}
+
+.footer p {
+  font-size: 14px;
+  color: #555;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links li {
+  margin-bottom: 8px;
+}
+
+.footer-links a {
+  text-decoration: none;
+  color: #555;
+  font-size: 14px;
+}
+
+.footer-links a:hover {
+  color: #007bff;
+}
+
+.back-to-top {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  background: #1762ec;
+  border: 1px solid #ccc;
+  padding: 8px 12px;
+  border-radius: 4px;
+  color: #a205c1;
+  color: #007bff;
+}
+
+footer {
+    background-color: #f8f9fa;
+    color: #000;
+    padding-top: 40px;
+}
+
+footer h5 {
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #000;
+}
+
+footer ul li {
+    margin-bottom: 8px;
+    cursor: pointer;
+}
+
+footer ul li:hover {
+    color: #007bff;
+}
+
+/* ================= SCROLL TO TOP ================= */
+.position-fixed {
+    border-radius: 50%;
+    padding: 10px 14px;
+    background-color: #007bff;
+    color: #fff;
+}
+
+/* ================= GRADIENT BUTTON ================= */
+.btn-grad {
+    background-image: linear-gradient(to right, #D38312 0%, #A83279 51%, #D38312 100%);
+    margin: 10px;
+    padding: 15px 45px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: #1762ec;            
+    box-shadow: 0 0 20x #1762ec;
+    border-radius: 10px;
+    display: block;
+}
+
+.btn-grad:hover {
+    background-position: right center;
+    color: #1762ec;
+    text-decoration: none;
+}
+
+/* ================= PRODUCTS SECTION ================= */
+.products {
+  background: #fff;
+}
+
+/* ---------- FILTER COLUMN ---------- */
+.products .border-right {
+  border-right: 1px solid #e0e0e0;
+}
+
+.products .list-group-item a {
+  color: #333;
+  text-decoration: none;
+}
+
+.products .list-group-item a:hover {
+  color: #007bff;
+}
+
+/* ---------- PRODUCT CARD ---------- */
+.single-product {
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.single-product:hover {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  transform: translateY(-5px);
+}
+
+/* ---------- IMAGE CONTAINER ---------- */
+.product-img {
+  position: relative;
+  width: 100%;
+  height: 260px;              /* SAME height for all images */
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ---------- IMAGE ---------- */
+.product-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;          /* Prevents image stretch */
+  transition: transform 0.4s ease;
+}
+
+/* ---------- IMAGE HOVER ZOOM ---------- */
+.single-product:hover .product-img img {
+  transform: scale(1.1);
+}
+
+/* ---------- NEW BADGE ---------- */
+.new_product {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 2;
+}
+
+/* ---------- PRODUCT CAPTION ---------- */
+.product-caption h5 a {
+  color: #222;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.product-caption h5 a:hover {
+  color: #007bff;
+}
+
+/* ---------- RATING ---------- */
+.product-ratting i {
+  color: #f4c150;
+  font-size: 14px;
+}
+
+/* ---------- PRICE ---------- */
+.price {
+  font-size: 16px;
+  color: #000;
+}
+
+
+/* ================= CHECKOUT & ORDER SUMMARY ================= */
+
+/* Main checkout background wraps both columns */
+.checkout {
+    background: linear-gradient(120deg, #c3dafb 0%, #d9c3fb 80%);
+    padding: 40px 0;
+}
+
+/* Form container background */
+.checkout .checkout-form {
+    background: #ffffff;
+    border-radius: 8px;
+    padding: 25px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* Labels */
+.checkout label {
+    font-weight: 500;
+    color: #000;
+}
+
+/* Inputs */
+.checkout .form-control {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 15px;
+}
+
+/* Order summary container */
+.checkout .order-summary-box {
+    background: #ffffff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    margin-top: 10px;
+}
+
+/* Order summary header */
+.checkout .order-summary-box h5 {
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #000;
+}
+
+/* Individual item row */
+.checkout .order-summary-box .item-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    font-size: 15px;
+    color: #000;
+}
+
+/* Total amount row */
+.checkout .order-summary-box .total-row {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 700;
+    margin-top: 12px;
+    border-top: 1px solid #ccc;
+    padding-top: 10px;
+    font-size: 16px;
+}
+
+/* Place Order Button */
+.checkout .btn-place-order {
+    width: 100%;
+    padding: 12px;
+    background: #007bff;
+    color: #fff;
+    font-weight: 600;
+    border: none;
+    border-radius: 6px;
+    margin-top: 20px;
+}
+
+.checkout .btn-place-order:hover {
+    background: #0056d2;
+}
+/* Underline cart heading */
+.cart-heading {
+    font-weight: 600;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 6px;
+}
+
+
+/* ================= CHECKOUT HEADING FULL-WIDTH ANIMATED UNDERLINE ================= */
+.checkout h2 {
+    text-align: center;
+    position: relative;
+    padding-bottom: 12px;
+}
+
+.checkout h2::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%) scaleX(0);
+    transform-origin: center;
+    width: 100%;
+    height: 3px;
+    background-color: #000000;
+    animation: underlineSlide 1s ease forwards;
+}
+
+@keyframes underlineSlide {
+    from {
+        transform: translateX(-50%) scaleX(0);
+    }
+    to {
+        transform: translateX(-50%) scaleX(1);
+    }
+}
+/* ================= CART SECTION BACKGROUND ================= */
+.cart {
+    background: linear-gradient(120deg, #b9d3ff 0%, #d8c2ff 100%);
+    padding: 50px 0;
+}
+
+/* ================= CART HEADING ================= */
+.cart h2 {
+    text-align: center;
+    font-weight: 600;
+    position: relative;
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+}
+
+/* Underline */
+.cart h2::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background-color: #000;
+}
+
+
+/* ================= ORDER SUMMARY ================= */
+.order-summary-box {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+/* Hover effect for the summary box */
+.order-summary-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+/* Order summary list items */
+.order-summary-box .list-group-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: none;
+    padding: 12px 0;
+    transition: background 0.3s ease;
+}
+
+/* Hover effect for product rows */
+.order-summary-box .list-group-item:hover {
+    background-color: #f8f9fa;
+    border-radius: 8px;
+}
+
+/* Product name alignment */
+.order-summary-box .list-group-item span:first-child {
+    flex: 1;
+    text-align: left;
+}
+
+/* Quantity and Price */
+.order-summary-box .list-group-item span:nth-child(2),
+.order-summary-box .list-group-item span:last-child {
+    width: 60px;
+    text-align: center;
+    font-weight: 500;
+}
+
+/* Checkout button styling */
+.order-summary-box .btn {
+    margin-top: 15px;
+    border-radius: 8px;
+    padding: 12px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.order-summary-box .btn:hover {
+    background-color: #0069d9;
+    transform: translateY(-2px);
+}
+
+
+/* ================= CART PAGE HEADING UNDERLINE ================= */
+#cart .section_title h1 {
+    display: inline-block;
+    position: relative;
+    padding-bottom: 8px;
+}
+
+/* Underline */
+#cart .section_title h1::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background-color: #000;
+}
+.border:hover {
+  transform: translateY(-5px);
+  transition: 0.3s;
+}
+
+/* ================= HEADER ================= */
+.navbar {
+  padding: 12px 20px;
+}
+
+.navbar-brand img {
+  max-height: 50px;
+}
+
+.navbar .nav-link {
+  color: #333 !important;
+  font-weight: 500;
+  margin: 0 8px;
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-item.active .nav-link {
+  color: #007bff !important;
+}
+
+/* Header right buttons */
+.navbar .btn-outline-primary {
+  border-radius: 6px;
+  padding: 6px 10px;
+}
+
+.navbar .btn-outline-primary i {
+  font-size: 15px;
+}
+
+/* ================= SEARCH SECTION ================= */
+#search_section {
+  background-color: #ffffff;
+}
+
+/* Title */
+#search_section h3 {
+  font-weight: 600;
+  color: #333;
+}
+
+/* Search input */
+#search_section .input-group {
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+#search_section .form-control {
+  border: none;
+  padding: 12px 15px;
+  font-size: 15px;
+}
+
+#search_section .form-control:focus {
+  box-shadow: none;
+}
+
+#search_section .btn-primary {
+  padding: 0 18px;
+  border-radius: 0;
+}
+
+/* Search result info text */
+#search_section small {
+  font-size: 13px;
+}
+
+/* ================= SEARCH RESULTS TABLE ================= */
+.search-result tr {
+  background-color: #ffffff;
+  transition: background 0.2s ease;
+}
+
+.search-result tr:hover {
+  background-color: #f1f4f7;
+}
+
+.search-result td {
+  vertical-align: middle;
+  padding: 15px;
+  font-size: 14px;
+}
+
+.search-result img {
+  border-radius: 6px;
+  border: 1px solid #ddd;
+}
+
+/* Product name */
+.search-result strong {
+  font-size: 15px;
+  color: #000;
+}
+
+/* Rating stars */
+.rating i,
+.text-warning i {
+  color: #f4c150;
+  margin-left: 2px;
+}
+
+/* Price */
+.search-result td:last-child {
+  font-weight: 600;
+  font-size: 15px;
+  color: #000;
+}
+
+/* ================= GLOBAL STYLES ================= */ 
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f8f9fa;
+}
+
+h1, h3, h5 {
+    font-weight: 600;
+}
+
+p {
+    font-size: 1rem;
+}
+
+/* ================= ABOUT US SECTION ================= */
+.about {
+    background-color: #ffffff;
+}
+
+.about .section_title h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+.about .section_title hr {
+    border: 2px solid #007bff;
+    width: 60px;
+    margin: 0 auto;
+}
+
+.about img {
+    max-width: 100%;
+    transition: transform 0.3s ease;
+}
+
+.about img:hover {
+    transform: scale(1.05);
+}
+
+.about h3 {
+    color: #007bff;
+    margin-bottom: 15px;
+}
+
+.about p {
+    color: #555;
+    margin-bottom: 15px;
+}
+
+/* ================= TESTIMONIAL CAROUSEL ================= */
+.testimonial {
+    background: linear-gradient(135deg, #43CBFF 0%, #9708CC 100%);
+    color: #fff;
+}
+
+.testimonial img {
+    border: 3px solid #fff;
+}
+
+.testimonial p {
+    font-style: italic;
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+}
+
+.testimonial h5 {
+    font-size: 1.2rem;
+}
+
+.testimonial small {
+    font-size: 0.9rem;
+}
+
+
+/* ================= FEATURES/ICON CARDS ================= */
+.py-5 .border {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: #fff;
+}
+
+.py-5 .border:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+.py-5 i {
+    color: #007bff;
+    margin-bottom: 10px;
+}
+
+.py-5 h5 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+    .about .row {
+        flex-direction: column-reverse;
+    }
+
+    .testimonial p {
+        font-size: 1rem;
+    }
+}
+
+/* Testimonial carousel images as perfect circles */
+.testimonial img {
+    width: 350px;          /* Fixed width */
+    height: 350px;         /* Fixed height to make it a perfect circle */
+    object-fit: cover;     /* Ensures the image covers the circle without stretching */    /* Makes it a circle */
+    border-radius: 50%;    /* Makes it a circle */
+    border: 2px solid #fff;
+    margin-bottom: 10px;
+    transition: transform 0.3s ease;
+}
+
+.testimonial img:hover {
+    transform: scale(1.05);
+}
+
+
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+    .carousel-item img {
+        height: 350px;
+    }
+
+    .single_product img {
+        height: 200px;
+    }
+}
